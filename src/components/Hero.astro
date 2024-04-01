@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../components/logo.svg";
+import ContactIcons from "./ContactIcons.astro";
+---
+
+<div class="standard-margin flex flex-grow justify-center flex-col">
+  <!-- avatar -->
+  <a
+    class="flex-start block h-40 w-40 origin-left"
+    href="/assets/img/avatar.png"
+  >
+    <Image
+      width="512"
+      height="512"
+      class="rounded-full object-cover h-40 w-40"
+      src={Logo}
+      alt="Logo Jan Friebe"
+    />
+  </a>
+  <!-- headline -->
+  <div class="max-w-2xl">
+    <h1
+      class="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-600 font-bold md:text-5xl"
+    >
+      Software developer, hobby boxer and drawer.
+    </h1>
+    <p class="mt-6">
+      I’m Jan Friebe, a professional software developer based in Germany NRW. At
+      the moment I worked for <a
+        href="https://eviden.com"
+        class="link"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Eviden Germany GmbH
+      </a> an IT service provider that supplies skilled professionals for time-bound
+      projects to external companies.
+    </p>
+    <ContactIcons />
+  </div>
+</div>

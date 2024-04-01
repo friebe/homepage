@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../components/logo.svg";
+const { showLogo, absolute } = Astro.props;
+---
+
+<header class={absolute ? `h-16 absolute top-0 right-0 left-0` : ""}>
+  <div class="w-full sm:pb-16 p-8">
+    <div class="flex flex-1">
+      <div class="flex flex-1">
+        <div class={showLogo ? `hidden` : ""}>
+          <a href="/">
+            <Image
+              class="rounded-full object-cover h-12 w-12"
+              src={Logo}
+              alt="Logo Jan Friebe"
+            /></a
+          >
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <nav class="md:block">
+          <ul class="list-none flex px-3 text-sm font-medium text-white">
+            <!-- <li>
+              <a
+                class="relative block px-3 py-2 transition hover:text-yellow-500"
+                href="/about">About</a
+              >
+            </li>
+            -->
+
+            <!-- 
+            <li>
+              <a
+                class="relative block px-3 py-2 transition hover:text-yellow-500"
+                href="/notes">Notes</a
+              >
+            </li>
+            -->
+            <li>
+              <a
+                class="relative block px-3 py-2 transition hover:text-yellow-500"
+                href="/guestbook">Guestbook</a
+              >
+            </li>
+
+            <!--<li>
+              <a
+                class="relative block px-3 py-2 transition hover:text-yellow-500"
+                href="/projects">Projects</a
+              >
+            </li>
+          -->
+          </ul>
+
+          <!-- mobile navigation -->
+          <!-- <div class="md:hidden">
+                <button
+                    class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
+                    type="button"
+                >
+                    Menu
+                    <svg
+                        viewBox="0 0 8 6"
+                        aria-hidden="true"
+                        class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
+                    >
+                        <path
+                            d="M1.75 1.75 4 4.25l2.25-2.5"
+                            fill="none"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div> -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

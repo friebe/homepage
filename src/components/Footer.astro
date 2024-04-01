@@ -1,0 +1,29 @@
+---
+const date = new Date();
+---
+
+<footer class="p-8 mt-12 w-full">
+    <div class="pt-5 pb-8 border-t border-zinc-800">
+        <div class="flex flex-col items-end">
+            <p class="text-sm">
+                © {date.getFullYear()} Jan Friebe. All rights reserved. Build with
+                <a
+                    href="https://astro.build"
+                    class="link"
+                    rel="noopener"
+                    target="_blank"
+                >
+                    Astro
+                </a> host on
+                <a
+                    href="https://netlify.com"
+                    class="link"
+                    rel="noopener"
+                    target="_blank"
+                >
+                    Netlify
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>

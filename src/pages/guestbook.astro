@@ -1,0 +1,101 @@
+---
+// @ts-ignore
+import { db, Guestbook } from "astro:db";
+import { z } from "astro:content";
+import Layout from "../components/Layout.astro";
+import Navi from "../components/Navi.astro";
+const pageTitle = "Guestbook";
+
+export type ReturnValue<T> = { data: T } | { error: string };
+
+const formShema = z.object({
+    author: z.string().min(1),
+    message: z.string().min(1),
+});
+
+const parseInput = (input: any): ReturnValue<string> => {
+    try {
+        formShema.parse(input);
+        return { data: input };
+    } catch (err) {
+        if (err instanceof z.ZodError) {
+            return { error: err.issues[0].message };
+        } else {
+            return { error: "Error occurred" };
+        }
+    }
+};
+
+if (Astro.request.method === "POST") {
+    const formData = await Astro.request.formData();
+    const data = Object.fromEntries(formData);
+
+    const result = parseInput(data);
+
+    if ("error" in result) {
+        console.error(result.error);
+    } else {
+        // @ts-ignore
+        await db.insert(Guestbook).values(result.data);
+    }
+}
+
+// @ts-ignore
+const guestbooks = await db.select().from(Guestbook);
+---
+
+<Layout title={pageTitle}>
+    <Navi />
+    <main class="flex-grow w-full">
+        <h1
+            class="font-bold text-3xl md:text-5xl tracking-tight mb-5 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-600"
+        >
+            # Guestbook
+        </h1>
+
+        <form method="POST" class="pb-5 max-w-sm">
+            <div class="mb-5">
+                <label for="author" class="block mb-2 text-sm font-medium"
+                    >Name</label
+                >
+                <input
+                    type="text"
+                    id="text"
+                    name="author"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                />
+            </div>
+            <div class="mb-5">
+                <label for="message" class="block mb-2 text-sm font-medium"
+                    >Message</label
+                >
+                <input
+                    type="text"
+                    name="message"
+                    id="message"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    required
+                />
+            </div>
+            <button
+                type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                >Submit</button
+            >
+        </form>
+
+        {
+            // @ts-ignore
+            guestbooks.map(({ author, message, date }) => (
+                <div class="flex-row">
+                    <div class="m-0">
+                        {author}
+                        <span class="mx-1">•</span>
+                        {date.toString().slice(0, 10)}
+                    </div>
+                    <p class="flex-col">{message}</p>
+                </div>
+            ))
+        }
+    </main>
+</Layout>
