@@ -2,7 +2,17 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			typography: (theme) => ({
+				zinc: {
+					css: {
+						'--tw-prose-body': theme('colors.zinc[100]'),
+						'--tw-prose-headings': theme('colors.zinc[100]'),
+						'--tw-prose-links': theme('colors.orange[500]'),
+					},
+				}
+			}),
+		}
 	},
 	plugins: [require('@tailwindcss/typography')],
 }

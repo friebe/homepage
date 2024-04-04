@@ -125,7 +125,7 @@
         @apply text-zinc-100;
     }
 
-    .prose-about a {
+    .markdown a {
         @apply link;
     }
 

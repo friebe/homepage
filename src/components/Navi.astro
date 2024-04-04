@@ -2,32 +2,35 @@
 import { Image } from "astro:assets";
 import Logo from "../components/logo.svg";
 const { showLogo, absolute } = Astro.props;
+
+console.log(!showLogo);
 ---
 
 <header class={absolute ? `h-16 absolute top-0 right-0 left-0` : ""}>
   <div class="w-full sm:pb-16 p-8">
     <div class="flex flex-1">
       <div class="flex flex-1">
-        <div class={showLogo ? `hidden` : ""}>
-          <a href="/">
-            <Image
-              class="rounded-full object-cover h-12 w-12"
-              src={Logo}
-              alt="Logo Jan Friebe"
-            /></a
-          >
-        </div>
+        {
+          !showLogo && (
+            <a href="/">
+              <Image
+                class="rounded-full object-cover h-12 w-12"
+                src={Logo}
+                alt="Logo Jan Friebe"
+              />
+            </a>
+          )
+        }
       </div>
       <div class="flex justify-end">
         <nav class="md:block">
           <ul class="list-none flex px-3 text-sm font-medium text-white">
-            <!-- <li>
+            <li>
               <a
                 class="relative block px-3 py-2 transition hover:text-yellow-500"
                 href="/about">About</a
               >
             </li>
-            -->
 
             <!-- 
             <li>
