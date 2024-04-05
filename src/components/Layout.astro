@@ -2,10 +2,12 @@
 import "../styles/base.css";
 import { ViewTransitions } from "astro:transitions";
 import Navi from "../components/Navi.astro";
+import Footer from "./Footer.astro";
 
 let title = "";
 let headline = "";
-let markdownStyleClasses = "cc";
+let markdownStyleClasses = "";
+let showLogo = Astro.props.showLogo;
 
 if ("title" in Astro.props) {
 	//for normal astro pages
@@ -46,5 +48,6 @@ if ("title" in Astro.props) {
 			}
 			<slot />
 		</main>
+		{!showLogo && <Footer />}
 	</body>
 </html>
