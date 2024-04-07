@@ -3,24 +3,36 @@
 import { db, Guestbook } from "astro:db";
 import { z } from "astro:content";
 import Layout from "../components/Layout.astro";
-const pageTitle = "Guestbook";
 
-export type ReturnValue<T> = { data: T } | { error: string };
+const pageTitle = "Guestbook";
+let fieldErrors: FieldErrors = {};
+
+interface FieldErrors {
+    [fieldName: string]: string;
+}
+interface ReturnValue {
+    success: boolean;
+    errors: FieldErrors;
+}
 
 const formShema = z.object({
-    author: z.string().min(1),
-    message: z.string().min(1),
+    author: z.string().min(2, { message: "Must be 3 or more characters long" }),
+    message: z
+        .string()
+        .min(2, { message: "Must be 3 or more characters long" }),
 });
 
-const parseInput = (input: any): ReturnValue<string> => {
+const parseInput = (input: any): ReturnValue => {
     try {
         formShema.parse(input);
-        return { data: input };
+        return { success: true, errors: fieldErrors };
     } catch (err) {
         if (err instanceof z.ZodError) {
-            return { error: err.issues[0].message };
+            const fieldErrors = errorMap(err);
+            console.log(err);
+            return { success: false, errors: fieldErrors };
         } else {
-            return { error: "Error occurred" };
+            return { success: false, errors: { general: "An error occurred" } };
         }
     }
 };
@@ -31,12 +43,25 @@ if (Astro.request.method === "POST") {
 
     const result = parseInput(data);
 
-    if ("error" in result) {
-        console.error(result.error);
+    if ("errors" in result) {
+        fieldErrors = result.errors;
     } else {
         // @ts-ignore
         await db.insert(Guestbook).values(result.data);
     }
+}
+
+function errorMap(zodError: z.ZodError): FieldErrors {
+    const fieldErrors: FieldErrors = {};
+
+    zodError.errors.forEach((err) => {
+        if (err.path.length > 0) {
+            const fieldName = err.path[0];
+            fieldErrors[fieldName] = err.message;
+        }
+    });
+
+    return fieldErrors;
 }
 
 // @ts-ignore
@@ -50,17 +75,24 @@ const guestbooks = await db.select().from(Guestbook);
         # Guestbook
     </h1>
 
-    <form method="POST" class="pb-5 max-w-sm">
+    <form method="POST" id="myForm" class="pb-5 max-w-sm">
         <div class="mb-5">
             <label for="author" class="block mb-2 text-sm font-medium"
-                >Name</label
+                >Author</label
             >
             <input
                 type="text"
-                id="text"
+                id="name"
                 name="author"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
+            {
+                fieldErrors && (
+                    <span class="text-yellow-500 text-xs italic">
+                        {fieldErrors.author}
+                    </span>
+                )
+            }
         </div>
         <div class="mb-5">
             <label for="message" class="block mb-2 text-sm font-medium"
@@ -71,8 +103,14 @@ const guestbooks = await db.select().from(Guestbook);
                 name="message"
                 id="message"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                required
             />
+            {
+                fieldErrors && (
+                    <span class="text-yellow-500 text-xs italic">
+                        {fieldErrors.message}
+                    </span>
+                )
+            }
         </div>
         <button
             type="submit"
