@@ -137,3 +137,7 @@
         background-size: auto, auto, 20px 20px, 20px 20px;
     }
 }
+
+body {
+    font-family: 'Inter';
+}
