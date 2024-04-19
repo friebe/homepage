@@ -45,7 +45,7 @@ import "@fontsource/inter/400.css";
 		<Navi showLogo={Astro.props.showLogo} />
 		<main
 			class:list={[
-				"px-4 md:px-6 pt-20 pb-24 md:pb-44 max-w-[700px] mx-auto ring-offset-primary",
+				"px-8 md:px-6 pt-10 pb-10 md:pb-44 max-w-[700px] mx-auto flex flex-grow justify-center flex-col",
 				markdownStyleClasses,
 			]}
 		>
@@ -58,6 +58,5 @@ import "@fontsource/inter/400.css";
 			}
 			<slot />
 		</main>
-		{!showLogo && <Footer />}
 	</body>
 </html>
