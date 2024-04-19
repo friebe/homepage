@@ -1,8 +1,9 @@
 ---
 title: About - Jan Friebe
-headline: About
 layout: '../components/Layout.astro'
 ---
+
+## About
 
 I was born 1992 in Gelsenkirchen and has been working in the digital media since 2009.  
 

@@ -1,84 +1,54 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../components/logo.svg";
-const { showLogo, absolute } = Astro.props;
+const { showLogo } = Astro.props;
 
-console.log(!showLogo);
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
-<header class={absolute ? `h-16 absolute top-0 right-0 left-0` : ""}>
-  <div class="w-full sm:pb-16 p-8">
-    <div class="flex flex-1">
-      <div class="flex flex-1">
-        {
-          !showLogo && (
-            <a href="/">
-              <Image
-                class="rounded-full object-cover h-12 w-12"
-                src={Logo}
-                alt="Logo Jan Friebe"
-              />
-            </a>
-          )
-        }
-      </div>
-      <div class="flex justify-end">
-        <nav class="md:block">
-          <ul class="list-none flex py-4 text-sm font-medium text-white">
-            <li>
-              <a
-                class="relative block transition hover:text-yellow-500"
-                href="/about">About</a
-              >
-            </li>
-
-            <!-- 
-            <li>
-              <a
-                class="relative block px-3 py-2 transition hover:text-yellow-500"
-                href="/notes">Notes</a
-              >
-            </li>
-            -->
-            <li>
-              <a
-                class="relative block pl-3 transition hover:text-yellow-500"
-                href="/guestbook">Guestbook</a
-              >
-            </li>
-
-            <!--<li>
-              <a
-                class="relative block px-3 py-2 transition hover:text-yellow-500"
-                href="/projects">Projects</a
-              >
-            </li>
-          -->
-          </ul>
-
-          <!-- mobile navigation -->
-          <!-- <div class="md:hidden">
-                <button
-                    class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
-                    type="button"
-                >
-                    Menu
-                    <svg
-                        viewBox="0 0 8 6"
-                        aria-hidden="true"
-                        class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
-                    >
-                        <path
-                            d="M1.75 1.75 4 4.25l2.25-2.5"
-                            fill="none"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"></path>
-                    </svg>
-                </button>
-            </div> -->
-        </nav>
-      </div>
-    </div>
-  </div>
+<header class="sticky top-0 z-10 main-header backdrop-blur-md bg-header">
+  <nav
+    class="px-4 md:px-6 py-2 max-w-[700px] mx-auto flex justify-between items-center"
+  >
+    <a href="/">
+      <Image
+        class:list={[
+          "rounded-full object-cover h-10 w-10",
+          { invisible: showLogo },
+        ]}
+        src={Logo}
+        alt="Logo Jan Friebe"
+      />
+    </a>
+    <ul class="flex items-center gap-6">
+      <li class="list-none">
+        <a
+          class:list={[
+            "px-4 py-2 text-zinc-300 rounded-full hover:transition-colors hover:text-white",
+            { "bg-orange-500 !text-white": currentPath === "" },
+          ]}
+          href="/">Home</a
+        >
+      </li>
+      <li class="list-none">
+        <a
+          class:list={[
+            "px-4 py-2 text-zinc-300 rounded-full hover:transition-colors hover:text-white",
+            { "bg-orange-500 !text-white": currentPath === "about" },
+          ]}
+          href="/about">About</a
+        >
+      </li>
+      <li class="list-none">
+        <a
+          class:list={[
+            "px-4 py-2 text-zinc-300 rounded-full hover:transition-colors hover:text-white",
+            { "bg-orange-500 !text-white": currentPath === "guestbook" },
+          ]}
+          href="/guestbook">Guestbook</a
+        >
+      </li>
+    </ul>
+  </nav>
 </header>

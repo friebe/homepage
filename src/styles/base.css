@@ -59,10 +59,10 @@
         @apply bg-zinc-100 my-6 pt-4 pb-px px-3 border-l-8 border-zinc-300;
     }
 
-    ol,
+    /* ol,
     ul {
         @apply mb-4 pl-8;
-    }
+    } */
 
     ol {
         @apply list-decimal;
@@ -131,9 +131,9 @@
 
     .square-bg {
         background-image:
-            linear-gradient(90deg, rgba(17, 17, 17), rgba(17, 17, 17, .90)), url(),
-            linear-gradient(#eee 1px, transparent 0),
-            linear-gradient(90deg, #eee 1px, rgb(17, 17, 17) 0);
+            linear-gradient(90deg, rgba(20, 20, 20), rgba(20, 20, 20, 0.9)), url(),
+            linear-gradient(#535353 1px, transparent 0),
+            linear-gradient(90deg, #535353 1px, rgb(17, 17, 17) 0);
         background-size: auto, auto, 20px 20px, 20px 20px;
     }
 }
