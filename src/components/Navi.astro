@@ -26,7 +26,7 @@ const currentPath = pathname.slice(1);
         <a
           class:list={[
             "px-4 py-2 text-zinc-300 rounded-full hover:transition-colors hover:text-white",
-            { "bg-orange-500 !text-white": currentPath === "" },
+            { "bg-orange-500 contrast-100 !text-zinc-800": currentPath === "" },
           ]}
           href="/">Home</a
         >
@@ -35,7 +35,7 @@ const currentPath = pathname.slice(1);
         <a
           class:list={[
             "px-4 py-2 text-zinc-300 rounded-full hover:transition-colors hover:text-white",
-            { "bg-orange-500 !text-white": currentPath === "about" },
+            { "bg-orange-500 !text-zinc-800": currentPath === "about" },
           ]}
           href="/about">About</a
         >
@@ -44,7 +44,7 @@ const currentPath = pathname.slice(1);
         <a
           class:list={[
             "px-4 py-2 text-zinc-300 rounded-full hover:transition-colors hover:text-white",
-            { "bg-orange-500 !text-white": currentPath === "guestbook" },
+            { "bg-orange-500 !text-zinc-800": currentPath === "guestbook" },
           ]}
           href="/guestbook">Guestbook</a
         >
