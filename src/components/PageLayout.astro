@@ -1,0 +1,37 @@
+---
+import "../styles/base.css";
+import { ViewTransitions } from "astro:transitions";
+import Navi from "../components/Navi.astro";
+
+const { title } = Astro.props;
+//import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+//import "@fontsource/inter/500.css";
+//import "@fontsource/inter/700.css";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index,follow" />
+        <meta
+            name="description"
+            content="Jan Friebe Software developer from Germany NRW"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} - Jan Friebe developer from Germany NRW</title>
+        <ViewTransitions />
+    </head>
+    <body
+        style="background-color:rgb(20, 20, 20); height: 100svh"
+        class="text-zinc-100 flex flex-col md:text-left"
+    >
+        <Navi />
+        <main
+            class="px-8 md:px-6 pt-20 pb-10 md:pb-44 max-w-[700px] mx-auto prose prose-lg prose-zinc md:grid grid-cols-[20%_80%]"
+        >
+            <slot />
+        </main>
+    </body>
+</html>

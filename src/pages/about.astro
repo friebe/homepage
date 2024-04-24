@@ -1,0 +1,30 @@
+---
+import Image from "astro/components/Image.astro";
+import ContactIcons from "../components/ContactIcons.astro";
+import Layout from "../components/PageLayout.astro";
+let aboutMardown = await Astro.glob("../pages/about.md");
+let aboutText = aboutMardown[0];
+const headline = aboutText.frontmatter.headline;
+---
+
+<Layout title="About">
+    <div class="grid grid-cols-subgrid col-span-3">
+        <h1 class="text-xl text-zinc-400">
+            {headline}
+        </h1>
+        <div class=""><aboutText.Content /></div>
+    </div>
+
+    <h1 class="text-xl text-zinc-400">Headshots</h1>
+    <Image
+        src="/assets/img/avatar.png"
+        width="359"
+        height="359"
+        alt="Bild Jan Friebe"
+    />
+
+    <div class="space-x-12 grid grid-cols-subgrid col-span-3">
+        <h1 class="text-xl text-zinc-400">Connect</h1>
+        <div class=""><ContactIcons /></div>
+    </div>
+</Layout>

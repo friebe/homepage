@@ -2,9 +2,7 @@
 // @ts-ignore
 import { db, Guestbook } from "astro:db";
 import { z } from "astro:content";
-import Layout from "../components/Layout.astro";
-
-const pageTitle = "Guestbook";
+import Layout from "../components/PageLayout.astro";
 let fieldErrors: FieldErrors = {};
 
 interface FieldErrors {
@@ -68,68 +66,67 @@ function errorMap(zodError: z.ZodError): FieldErrors {
 const guestbooks = await db.select().from(Guestbook);
 ---
 
-<Layout title={pageTitle}>
-    <h1
-        class="font-bold text-4xl md:text-4xl tracking-tight mb-5 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-600"
-    >
-        # Guestbook
-    </h1>
-
-    <form method="POST" id="myForm" class="pb-5 max-w-sm">
-        <div class="mb-5">
-            <label for="author" class="block mb-2 text-sm font-medium"
-                >Author</label
-            >
-            <input
-                type="text"
-                id="name"
-                name="author"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            />
-            {
-                fieldErrors && (
-                    <span class="text-yellow-500 text-xs italic">
-                        {fieldErrors.author}
-                    </span>
-                )
-            }
-        </div>
-        <div class="mb-5">
-            <label for="message" class="block mb-2 text-sm font-medium"
-                >Message</label
-            >
-            <input
-                type="text"
-                name="message"
-                id="message"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            />
-            {
-                fieldErrors && (
-                    <span class="text-yellow-500 text-xs italic">
-                        {fieldErrors.message}
-                    </span>
-                )
-            }
-        </div>
-        <button
-            type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-            >Submit</button
-        >
-    </form>
-
-    {
-        // @ts-ignore
-        guestbooks.map(({ author, message, date }) => (
-            <div class="flex-row">
-                <div class="m-0">
-                    {author}
-                    <span class="mx-1">•</span>
-                    {date.toString().slice(0, 10)}
+<Layout title="Guestbook">
+    <div class="md:space-x-12 grid grid-cols-subgrid col-span-3">
+        <h1 class="text-xl text-zinc-400 md:text-right">Guestbook</h1>
+        <div class="">
+            <form method="POST" id="myForm" class="pb-5 max-w-sm">
+                <div class="mb-5">
+                    <label for="author" class="block mb-2 text-sm font-small"
+                        >Author</label
+                    >
+                    <input
+                        type="text"
+                        id="name"
+                        name="author"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    />
+                    {
+                        fieldErrors && (
+                            <span class="text-yellow-500 text-xs italic">
+                                {fieldErrors.author}
+                            </span>
+                        )
+                    }
                 </div>
-                <p class="flex-col">{message}</p>
-            </div>
-        ))
-    }
+                <div class="mb-5">
+                    <label for="message" class="block mb-2 text-sm font-medium"
+                        >Message</label
+                    >
+                    <input
+                        type="text"
+                        name="message"
+                        id="message"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    />
+                    {
+                        fieldErrors && (
+                            <span class="text-yellow-500 text-xs italic">
+                                {fieldErrors.message}
+                            </span>
+                        )
+                    }
+                </div>
+                <button
+                    type="submit"
+                    class="text-white bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                    >Submit</button
+                >
+            </form>
+
+            {
+                // @ts-ignore
+                guestbooks.map(({ author, message, date }) => (
+                    <div class="flex-row">
+                        <div class="m-0">
+                            {author}
+                            <span class="mx-1">•</span>
+                            {date.toString().slice(0, 10)}
+                            <p class="mt-0">{message}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
 </Layout>

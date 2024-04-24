@@ -2,23 +2,8 @@
 import "../styles/base.css";
 import { ViewTransitions } from "astro:transitions";
 import Navi from "../components/Navi.astro";
-import Footer from "./Footer.astro";
 
-let title = "";
-let headline = "";
-let markdownStyleClasses = "";
-let showLogo = Astro.props.showLogo;
-
-if ("title" in Astro.props) {
-	//for normal astro pages
-	title = Astro.props.title;
-} else {
-	//for markdown pages
-	title = Astro.props.frontmatter.title;
-	headline = Astro.props.frontmatter.headline;
-	markdownStyleClasses = "prose prose-lg prose-zinc";
-}
-
+const { title } = Astro.props;
 //import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
 //import "@fontsource/inter/500.css";
@@ -44,18 +29,8 @@ import "@fontsource/inter/400.css";
 	>
 		<Navi showLogo={Astro.props.showLogo} />
 		<main
-			class:list={[
-				"px-8 md:px-6 pt-10 pb-10 md:pb-44 max-w-[700px] mx-auto flex flex-grow justify-center flex-col",
-				markdownStyleClasses,
-			]}
+			class="px-8 md:px-6 pt-10 pb-10 md:pb-44 max-w-[700px] mx-auto flex flex-grow justify-center flex-col"
 		>
-			{
-				headline && (
-					<h1 class="font-bold text-3xl md:text-5xl tracking-tight mb-5 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-600">
-						# {headline}
-					</h1>
-				)
-			}
 			<slot />
 		</main>
 	</body>

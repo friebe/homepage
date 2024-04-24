@@ -1,9 +1,6 @@
 ---
-title: About - Jan Friebe
-layout: '../components/Layout.astro'
+headline: About
 ---
-
-## About
 
 I was born 1992 in Gelsenkirchen and has been working in the digital media since 2009.  
 
@@ -21,9 +18,6 @@ As a JavaScript lover and enthusiast I am interested in the basics of the langua
 
 I like to look at successful and beautiful web projects and test them out. Code best practices, patterns and code quality a la clean code play an important role in my everyday life as a developer.
 
-### Headshots
-![Jan Friebe](/assets/img/avatar.png)
-
 --
 
-Are you interested in further information about me and my work hava a look at my [resume](https://resume.jan-friebe.de) page and feel free to contact me.
+Are you interested in further information about me and my work have a look at my [resume](https://resume.jan-friebe.de) page and feel free to contact me.

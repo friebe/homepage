@@ -4,7 +4,7 @@
 
 @layer base {
     .link {
-        @apply text-orange-600 border-b-2 border-orange-600;
+        @apply text-orange-600 border-b border-orange-600;
     }
 
     .standard-margin {
