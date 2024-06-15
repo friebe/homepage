@@ -8,6 +8,8 @@ const { title } = Astro.props;
 import "@fontsource/inter/400.css";
 //import "@fontsource/inter/500.css";
 //import "@fontsource/inter/700.css";
+const websiteId = "8909201b-4cb7-45e1-b117-eea0b83285d6";
+const umamiUrl = "https://cloud.umami.is/script.js";
 ---
 
 <html lang="en">
@@ -20,6 +22,7 @@ import "@fontsource/inter/400.css";
         />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <script is:inline data-website-id={websiteId} src={umamiUrl}></script>
         <title>{title} - Jan Friebe developer from Germany NRW</title>
         <ViewTransitions />
     </head>
