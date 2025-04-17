@@ -1,8 +1,8 @@
 ## . Hi, I'm Jan Friebe
 
-I'm a Germany-based IT specialist in application development with a background in graphic design for both print and digital media. At the moment I worked as a Team Leader | Technical Lead | Senior developer for an [IAM Product](https://www.evidian.com/de/products/dirx/) [@Eviden](https://eviden.com). 
+I'm a Germany-based IT specialist in application development with a background in graphic design for both print and digital media. At the moment I worked as a Technical Team Lead and Full-Stack Developer for an [IAM Product](https://www.evidian.com/de/products/dirx/) [@Eviden](https://eviden.com). 
 
-I have a strong passion for software development, where I focus on striking a balance between functionality and visually appealing, intuitive designs. [Learn more about my journey and personal background](/about)
+I have a strong passion for software development, with a particular focus on frontend engineering and team leadership. My work centers around creating functional, visually appealing, and intuitive user interfaces that strike the right balance between usability and design. I'm driven by the challenge of translating complex requirements into seamless digital experiences, while also guiding teams toward collaborative and scalable solutions. [Learn more about my journey and personal background](/about)
 
 I'm always interested in hearing about new opportunities, collaborations, or just having a chat about technology and design.
 
@@ -10,27 +10,29 @@ I'm always interested in hearing about new opportunities, collaborations, or jus
 
 ## Philosophy
 
-I always aim to understand the bigger picture and the intricacies that define perfection in a product. I also love teaching, helping others grow, and sharing my knowledge to empower those around me.
+I always try to see the big picture – but I also care about the little details that turn a good product into a great one. For me, it’s not just about writing code, but about creating something that works well, looks good, and feels right to use. I also really enjoy sharing what I know, helping others grow, and learning together. After all, some of the best learning happens when you’re teaching someone else.
 
 ## Featured Projects
 
 <div class="project-card">
   <img src="/projects/kiddio.png" loading="lazy" alt="KiddioHub Platform Screenshot" />
   <h3>KiddioHub</h3>
-  <p>A comprehensive learning platform designed for children, featuring interactive educational content and games. Built with Vue and TypeScript and Tailwind</p>
+  <p>KiddioHub is a kid-friendly web app that offers access to custom media like songs, videos, or family calls — giving children independence while parents stay in control.
+Built with Vue 3 and Tailwind CSS, it runs on a lightweight, flexible backend.</p>
   <p><a href="https://kiddio.netlify.app/">View Project →</a></p>
 </div>
 
 <div class="project-card">
-  <img src="/projects/reddit-tracker.png" loading="lazy" alt="Reddit Tracker Screenshot" />
+  <img src="/projects/reddit-tracker.png" loading="lazy" alt="Reddit Post Tracker Screenshot" />
   <h3>Reddit Post Tracker</h3>
-  <p>A modular design system that bridges the gap between developers and designers. Built with React, TypeScript, and Storybook, it streamlines the development process while maintaining consistency.</p>
-  <p><a href="https://github.com/janfriebe/design-system">View Project →</a></p>
+  <p>A web app that helps users monitor activity on saved Reddit posts. It tracks changes in upvotes and comments over time, helping users stay up to date with discussions they care about. I built it to solve a personal frustration with Reddit’s limited save feature.Build with Nuxt 3, Tailwind CSS, Supabase, Clerk and Fly.io</p>
+  <p><a href="https://reddit-tracker.fly.dev">View Project →</a></p>
 </div>
 
 <div class="project-card">
   <img src="/projects/labelify.png" loading="lazy" alt="Spotify Label Service Screenshot" />
   <h3>Spotify Label Service</h3>
-  <p>A collection of CLI tools optimizing the development workflow. Implemented using Node.js and TypeScript, these tools automate common tasks and enhance productivity.</p>
-  <p><a href="https://github.com/janfriebe/dev-tools">View Project →</a></p>
+  <p>A web app that allows users to organize, filter, and play their Spotify tracks using custom labels — independent of playlist structure.
+It is built with React and Tailwind CSS, and integrates the Spotify Web Playback SDK for inline song playback.</p>
+  <p><a href="https://labelify.fly.dev/">View Project →</a></p>
 </div>
