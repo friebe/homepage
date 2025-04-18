@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const sourceDir = path.join(__dirname, '../public/projects')
-const outputDir = path.join(__dirname, '../public/projects')
+const outputDir = path.join(__dirname, '../public/projects-compressed')
 
 async function compressImages() {
   await fs.ensureDir(outputDir)
@@ -20,15 +20,20 @@ async function compressImages() {
 
     if (['.jpg', '.jpeg', '.png'].includes(ext)) {
       await sharp(inputPath)
-        .resize({ width: 1200 }) // Optional
-        .jpeg({ quality: 70 })   // oder .png({ quality: 80 })
-        .toFile(outputPath)
+        .resize({ width: 1200 }) 
+        .jpeg({ quality: 70 })   
+        .toFile(outputPath)    
     } else {
       await fs.copy(inputPath, outputPath)
     }
   }))
 
   console.log('✅ Bilder komprimiert!')
+
+  await fs.remove(sourceDir)  
+  await fs.move(outputDir, sourceDir)
+
+  console.log('✅ Ordner ersetzt: Originalbilder wurden durch komprimierte ersetzt.')
 }
 
 compressImages().catch(err => {
