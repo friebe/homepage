@@ -85,9 +85,6 @@ body {
     radial-gradient(circle at 0% 100%, rgba(24, 24, 27, 0.13) 0%, transparent 50%),
     linear-gradient(180deg, #09090b 0%, #18181b 100%);
   background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%, 100% 100%;
-  animation: gradientMove 20s ease infinite;
-  will-change: transform;
-  contain: strict;
 }
 
 .page-background::before {
@@ -96,8 +93,6 @@ body {
   background: 
     radial-gradient(circle at 50% 0%, rgba(120, 120, 120, 0.07) 0%, transparent 50%),
     radial-gradient(circle at 50% 100%, rgba(100, 100, 100, 0.07) 0%, transparent 50%);
-  animation: pulseGradient 15s ease-in-out infinite alternate;
-  will-change: transform, opacity;
 }
 
 .content-container {
@@ -107,18 +102,6 @@ body {
 
 footer {
   @apply relative z-10;
-}
-
-@keyframes gradientMove {
-  0% { 
-    background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%;
-  }
-  50% { 
-    background-position: 100% 100%, 0% 100%, 0% 0%, 100% 0%, 0% 0%;
-  }
-  100% { 
-    background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%;
-  }
 }
 
 @keyframes fadeIn {
