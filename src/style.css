@@ -9,13 +9,19 @@
   }
 }
 
+/* Optimize performance by reducing paint operations */
 body {
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.7;
   font-weight: 300;
   background-color: #030303;
   color: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  will-change: transform;
 }
+
 
 .gradient-text {
   background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
@@ -35,6 +41,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-family: 'Playfair Display', serif;
+  will-change: transform;
 }
 
 .markdown-content h2 {
@@ -57,10 +64,12 @@ body {
 
 .project-card {
   @apply bg-zinc-900/80 backdrop-blur-sm rounded-xl p-8 mb-12 border border-zinc-800/50;
+  contain: content;
 }
 
 .project-card img {
   @apply w-full rounded-lg mb-6 border border-zinc-800 bg-white/10;
+  content-visibility: auto;
 }
 
 .project-card p {
@@ -77,6 +86,8 @@ body {
     linear-gradient(180deg, #09090b 0%, #18181b 100%);
   background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%, 100% 100%;
   animation: gradientMove 20s ease infinite;
+  will-change: transform;
+  contain: strict;
 }
 
 .page-background::before {
@@ -86,10 +97,12 @@ body {
     radial-gradient(circle at 50% 0%, rgba(120, 120, 120, 0.07) 0%, transparent 50%),
     radial-gradient(circle at 50% 100%, rgba(100, 100, 100, 0.07) 0%, transparent 50%);
   animation: pulseGradient 15s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
 .content-container {
   @apply relative z-10;
+  contain: content;
 }
 
 footer {
@@ -126,5 +139,6 @@ footer {
 .markdown-content > * {
   opacity: 0;
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  content-visibility: auto;
 }
 

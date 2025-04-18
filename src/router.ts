@@ -19,7 +19,7 @@ export async function router(path: string): Promise<string> {
   } catch (error) {
     console.error('Routing error:', error);
     return createLayout({
-      html: '<h1>Error loading content</h1>',
+      html: Promise.resolve('<h1>Error loading content</h1>'),
       meta: PAGE_META['/']
     });
   }
@@ -29,7 +29,7 @@ async function loadContent(path: string): Promise<PageContent> {
   try {
     const markdown = contentMap[path] || contentMap['/'];
     return {
-      html: await marked(markdown),
+      html: Promise.resolve(marked(markdown)),
       meta: PAGE_META[path] || PAGE_META['/']
     };
   } catch (error) {
