@@ -15,6 +15,27 @@ I always try to see the big picture – but I also care about the little details
 ## Featured Projects
 
 <div class="project-card">
+  <img src="/projects/listlet.png" loading="lazy" alt="stretchup - Digitale Übungspläne" />
+  <h3>Listlet</h3>
+  <p>A simple web app to create and share wishlists with family and friends. Perfect for birthdays, Christmas, and special occasions. Built with Vue 3 and Tailwind CSS.</p>
+  <p><a href="https://listlet.netlify.app/">View Project →</a></p>
+</div>
+
+<div class="project-card">
+  <img src="/projects/jumpwise.png" loading="lazy" alt="stretchup - Digitale Übungspläne" />
+  <h3>jumpwise</h3>
+  <p>A lightweight web app to re-mark key moments in technical demos and sprint reviews. It helps teams navigate show & tells smoothly without awkward timeline scrubbing. Built with Vite, Vue 3, and Tailwind CSS. Free, private, and no registration required.</p>
+  <p><a href="https://jumpwise.netlify.app/">View Project →</a></p>
+</div>
+
+<div class="project-card">
+  <img src="/projects/stretchup.png" loading="lazy" alt="stretchup - Digitale Übungspläne" />
+  <h3>stretchup</h3>
+  <p>A web app to generate professional exercise plans for physiotherapists and share it with your patients. Built with Vue 3, Tailwind CSS, and Supabase.</p>
+  <p><a href="https://stretchup.de/">View Project →</a></p>
+</div>
+
+<div class="project-card">
   <img src="/projects/kiddio.png" loading="lazy" alt="KiddioHub Platform Screenshot" />
   <h3>KiddioHub</h3>
   <p>KiddioHub is a kid-friendly web app that offers access to custom media like songs, videos, or family calls — giving children independence while parents stay in control.
