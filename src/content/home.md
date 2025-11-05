@@ -15,6 +15,13 @@ I always try to see the big picture – but I also care about the little details
 ## Featured Projects
 
 <div class="project-card">
+  <img src="/projects/vereinscsv.png" loading="lazy" alt="VereinsCSV - CSV Generator for German Clubs" />
+  <h3>VereinsCSV</h3>
+  <p>A lightweight web app that helps German clubs and associations create bank-compatible CSV files from their Excel member lists. Ideal for small local clubs without complex management software. DSGVO-compliant and runs entirely in your browser — no data is stored.</p>
+  <p><a href="https://vereinscsv.jan-friebe.de/">View Project →</a></p>
+</div>
+
+<div class="project-card">
   <img src="/projects/listlet.png" loading="lazy" alt="stretchup - Digitale Übungspläne" />
   <h3>Listlet</h3>
   <p>A simple web app to create and share wishlists with family and friends. Perfect for birthdays, Christmas, and special occasions. Built with Vue 3 and Tailwind CSS.</p>
