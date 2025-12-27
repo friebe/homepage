@@ -15,6 +15,13 @@ I always try to see the big picture – but I also care about the little details
 ## Featured Projects
 
 <div class="project-card">
+  <img src="/projects/dokura.png" loading="lazy" alt="Dokura - Offizielle Schreiben als PDF erstellen" />
+  <h3>Dokura</h3>
+  <p>Erstelle professionelle Briefe, Widersprüche, Reklamationen und Behördenschreiben direkt im Browser – inklusive aller Anhänge in einem einzigen PDF. DIN 5008-konform, DSGVO-konform und komplett lokal ohne Cloud-Upload. Perfekt für offizielle Dokumente mit Nachweisen, Fotos oder Belegen.</p>
+  <p><a href="https://dokura.jan-friebe.de/">View Project →</a></p>
+</div>
+
+<div class="project-card">
   <img src="/projects/vereinscsv.png" loading="lazy" alt="VereinsCSV - CSV Generator for German Clubs" />
   <h3>VereinsCSV</h3>
   <p>A lightweight web app that helps German clubs and associations create bank-compatible CSV files from their Excel member lists. Ideal for small local clubs without complex management software. DSGVO-compliant and runs entirely in your browser — no data is stored.</p>
