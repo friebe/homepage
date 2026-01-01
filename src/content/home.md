@@ -15,10 +15,10 @@ I always try to see the big picture – but I also care about the little details
 ## Featured Projects
 
 <div class="project-card">
-  <img src="/projects/dokura.png" loading="lazy" alt="Dokura - Offizielle Schreiben als PDF erstellen" />
+  <img src="/projects/dokura.png" loading="lazy" alt="Dokura Software: Erstelle professionelle Briefe, Widersprüche und Behördenschreiben direkt im Browser">
   <h3>Dokura</h3>
-  <p>Erstelle professionelle Briefe, Widersprüche, Reklamationen und Behördenschreiben direkt im Browser – inklusive aller Anhänge in einem einzigen PDF. DIN 5008-konform, DSGVO-konform und komplett lokal ohne Cloud-Upload. Perfekt für offizielle Dokumente mit Nachweisen, Fotos oder Belegen.</p>
-  <p><a href="https://dokura.jan-friebe.de/">View Project →</a></p>
+  <p>Erstelle professionelle Briefe, Widersprüche und Behördenschreiben direkt im Browser – inklusive aller Anhänge in einem PDF. DIN 5008-konform und DSGVO-sicher durch lokale Verarbeitung.</p>
+  <p><a href="https://dokura.jan-friebe.de/" title="Dokura: Offizielle Schreiben als PDF erstellen">Dokura: Briefe & Widersprüche erstellen →</a></p>
 </div>
 
 <div class="project-card">
