@@ -10,7 +10,7 @@ I quickly realized that there was more to learn besides creativity on the web an
 
 Mostly I deal with design and frontend things. Especially I build things with JavaScript/TypeScript or other cool languages or tools. I use different frameworks, libarys or static site generators. Besides the frontend development I follow current web trends in articles and blogs. I like to attend online courses for further education and often take part in meetups, conferences, seminars, camps and workshops. I am happy to pass on my acquired knowledge at event talks. I like the variety and the people who burn with enthusiasm for their work.
 
-Besides topics of frontend development design and UI/UX I am interested in general topics like SEO and performance. Outside of programming and helping my wife take care of our kid. I am interested in the UFC and NBA and do sports like jogging or boxing. I like cooking and books about self-organization, biographies of great personalities and non fiction books.
+Besides topics of frontend development design and UI/UX I am interested in general topics like SEO and performance. Outside of programming and helping my wife take care of our kids. I am interested in the UFC and NBA and do sports like jogging or boxing. I like cooking and books about self-organization, biographies of great personalities and non fiction books.
 
 As a JavaScript lover and enthusiast I am interested in the basics of the language, just like in UI frameworks, their ecosystems and toolings.
 
