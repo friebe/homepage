@@ -1,6 +1,6 @@
 ## . Hi, I'm Jan Friebe
 
-I'm a Germany-based IT specialist in application development with a background in graphic design for both print and digital media. At the moment I worked as a Technical Team Lead and Full-Stack Developer for an [IAM Product](https://www.evidian.com/de/products/dirx/) [@Eviden](https://eviden.com). 
+I'm a Germany-based IT specialist in application development with a background in graphic design for both print and digital media. At the moment I worked as a Technical Team Lead and Full-Stack Developer for an [Cybersecurity Product](https://www.evidian.com/de/products/dirx/) [@Eviden](https://eviden.com). 
 
 I have a strong passion for software development, with a particular focus on frontend engineering and team leadership. My work centers around creating functional, visually appealing, and intuitive user interfaces that strike the right balance between usability and design. I'm driven by the challenge of translating complex requirements into seamless digital experiences, while also guiding teams toward collaborative and scalable solutions. [Learn more about my journey and personal background](/about)
 
@@ -13,6 +13,13 @@ I'm always interested in hearing about new opportunities, collaborations, or jus
 I always try to see the big picture – but I also care about the little details that turn a good product into a great one. For me, it’s not just about writing code, but about creating something that works well, looks good, and feels right to use. I also really enjoy sharing what I know, helping others grow, and learning together. After all, some of the best learning happens when you’re teaching someone else.
 
 ## Featured Projects
+
+<div class="project-card">
+  <img src="/projects/safecycle.png" loading="lazy" alt="SafeCycle: PDFs sicher versenden ohne Passwort-Mail">
+  <h3>SafeCycle</h3>
+  <p>Versende passwortgeschützte PDFs ohne die unsichere „zweite Mail“. Die Verschlüsselung erfolgt lokal im Browser, während der Empfänger das Passwort erst nach einer Code-Bestätigung erhält. Ideal für den sicheren Erstkontakt ohne Registrierung.</p>
+  <p><a href="https://jan-friebe.de" title="SafeCycle: PDF sicher versenden">SafeCycle: Sicherer PDF-Versand →</a></p>
+</div>
 
 <div class="project-card">
   <img src="/projects/dokura.png" loading="lazy" alt="Dokura Software: Erstelle professionelle Briefe, Widersprüche und Behördenschreiben direkt im Browser">
