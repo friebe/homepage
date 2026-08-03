@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+  <!-- JF ligature: shared stem, expressive J-hook, registration dot -->
+  <path d="M6 4.5h8.5" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+  <path d="M6 4.5v12" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+  <path d="M6 9.75h5.25" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+  <path d="M6 16.5c3.25 0 6-1.75 7.5-4.25 1.1-1.85 1-4.15-.75-5.75" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+  <circle cx="16.75" cy="5.75" r="1.2" fill="currentColor"/>
+</svg>

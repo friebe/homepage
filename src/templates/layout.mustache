@@ -1,11 +1,42 @@
-<div class="page-background"></div>
-<div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-24">
-  <main class="content-container py-[30px]">
-    <div class="markdown-content">
-      {{{content}}}
+<div class="page-shell">
+  <header class="nav-edge">
+    <a href="/" class="wordmark">
+      <svg class="site-mark" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 4.5h8.5" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+        <path d="M6 4.5v12" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+        <path d="M6 9.75h5.25" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+        <path d="M6 16.5c3.25 0 6-1.75 7.5-4.25 1.1-1.85 1-4.15-.75-5.75" stroke="currentColor" stroke-width="1.85" stroke-linecap="square"/>
+        <circle cx="16.75" cy="5.75" r="1.2" fill="currentColor"/>
+      </svg>
+      Jan Friebe
+    </a>
+    <div class="nav-actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Dunkelmodus aktivieren">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="3.25" stroke="currentColor" stroke-width="1.35"/>
+          <path d="M10 3v1.5M10 15.5V17M3 10h1.5M15.5 10H17M5.05 5.05l1.06 1.06M13.89 13.89l1.06 1.06M5.05 14.95l1.06-1.06M13.89 6.11l1.06-1.06" stroke="currentColor" stroke-width="1.35" stroke-linecap="square"/>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M14.5 11.25a5.25 5.25 0 0 1-7-7 5.75 5.75 0 1 0 7 7Z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <a href="mailto:kontakt@jan-friebe.de" class="nav-cta">Contact →</a>
     </div>
+  </header>
+
+  <main class="content-container">
+    <article class="markdown-content prose">
+      {{{content}}}
+    </article>
   </main>
-  <footer class="text-center py-8 text-zinc-500 text-sm">
-    © Jan Friebe • Made with ❤️
+
+  <footer class="foot-line">
+    <p>
+      © {{meta.year}} Jan Friebe
+      <span class="foot-sep" aria-hidden="true">·</span>
+      <a href="/about" class="foot-link{{#isAbout}} is-active{{/isAbout}}">About</a>
+      <span class="foot-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/friebe" class="foot-link">GitHub</a>
+    </p>
   </footer>
 </div>

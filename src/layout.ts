@@ -8,6 +8,9 @@ export async function createLayout(content: PageContent): Promise<string> {
 
   return Mustache.render(layoutTemplate, {
     content: resolvedHtml,
-    meta: content.meta,
+    meta: { ...content.meta, year: new Date().getFullYear() },
+    path: content.path,
+    isHome: content.path === '/',
+    isAbout: content.path === '/about',
   });
 }

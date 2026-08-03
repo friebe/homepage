@@ -6,4 +6,5 @@ export interface PageMeta {
 export interface PageContent {
   html: Promise<string>;
   meta: PageMeta;
+  path: string;
 }
