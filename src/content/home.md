@@ -6,6 +6,7 @@ I care about interfaces that work well, look right, and feel good to use — and
 
 Some projects I've built:
 
+- **[Stint](https://getstint.de)** — Sit · micro-move · stand — body maintenance at your desk, not a focus timer
 - **[SafeCycle](https://jan-friebe.de)** — Passwortgeschützte PDFs sicher versenden, ohne unsichere Passwort-Mails
 - **[Dokura](https://dokura.jan-friebe.de/)** — Briefe, Widersprüche und Behördenschreiben direkt im Browser
 - **[VereinsCSV](https://vereinscsv.jan-friebe.de/)** — CSV-Generator für deutsche Vereine, komplett im Browser
